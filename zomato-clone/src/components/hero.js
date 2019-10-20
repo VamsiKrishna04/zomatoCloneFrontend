@@ -1,10 +1,27 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
-var cityName;
+import {connect} from 'react-redux'
+import {getLocation} from './actions/getLocationAction'
 
-export class hero extends Component {
+export class Hero extends Component {
+  getMyLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.showPosition);
+    }
+  };
+
+  showPosition = position => {console.log("ssssss");
+    console.log(position.coords.latitude);
+    console.log(position.coords.longitude);
+let coordinates={
+  latitude:position.coords.latitude,
+  longitude:position.coords.longitude
+}
+// console.log('thweese aere thai',coordinates)
+  this.props.getLocation(coordinates)
+  };
   render() {
+    console.log('this  is props',this.props)
     return (
       <div className="hero-img">
         <div className="container text-left text-white">
@@ -41,14 +58,13 @@ export class hero extends Component {
                 className="form-control pl-5 h-100"
                 placeholder="Type delivery location here..."
                 value={this.props.address}
-                onChange={this.props.handleChange}
               />
               <div className="input-separator"></div>
               <i className="fa fa-location-arrow" aria-hidden="true"></i>
               <button
                 className="btn col-xs-2 auto-detect-button"
                 style={{ fontSize: "1.2em", color: "grey" }}
-                onClick={this.getLocation}
+                onClick={this.getMyLocation}
               >
                 Detect
                 <i className="fa ml-2 fa-crosshairs"></i>
@@ -67,5 +83,14 @@ export class hero extends Component {
     );
   }
 }
+const mapStateToprops=(state,ownProps)=>
+{
+  
+  return {
+    address:state.location.address
+  }
+}
 
-export default hero;
+
+
+export default connect(mapStateToprops,{getLocation})(Hero)

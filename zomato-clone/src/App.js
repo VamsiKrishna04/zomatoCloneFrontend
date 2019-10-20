@@ -6,45 +6,17 @@ import { Route, BrowserRouter as Router } from "react-router-dom";
 import City from "./components/City";
 import "./App.css";
 import React, { Component } from "react";
+import {Provider} from 'react-redux';
+import store from './components/store/store'
 
 export class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { address: "" };
-    this.handleChange = this.handleChange.bind(this);
-  }
-  getLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.showPosition);
-    }
-  };
-  showPosition = position => {
-    console.log(position.coords.latitude);
-    console.log(position.coords.longitude);
-
-    axios
-      .get(
-        `https://developers.zomato.com/api/v2.1/geocode?lat=${position.coords.latitude}&lon=${position.coords.longitude}&apikey=e959162dcd6f277645d33bdb151d281d`
-      )
-      .then(res => {
-        cityName = res.data.location.city_name;
-        this.setState({ address: cityName });
-      });
-  };
-  handleChange(event) {
-    this.setState({ address: event.target.value });
-  }
   render() {
-    return (
+    return (<Provider store={store}>
       <div>
-        <>
           <Router>
             <Route exact path="/">
               <Header />
-              <Hero
-                address={this.state.address}
-                handleChange={this.handleChange}
-              />
+              <Hero/>
               <Option />
               <Footer />
             </Route>
@@ -52,8 +24,7 @@ export class App extends Component {
               <City />
             </Route>
           </Router>
-        </>
-      </div>
+      </div></Provider>
     );
   }
 }
