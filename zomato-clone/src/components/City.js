@@ -1,10 +1,18 @@
 import React, { Component } from "react";
 import LoginSignupButton from "./LoginSignupButton";
 import zomatoSvg from "../zomato_flat_bg_logo.svg";
+import {connect} from 'react-redux'
+import {getLocationFromRoute} from './actions/getLocationAction'
+import {withRouter} from 'react-router';
+import {compose} from 'redux'
 // import axios from "axios";
 
 export class City extends Component {
-  render() {
+componentDidMount() {
+  this.props.getLocationFromRoute(this.props.match.params.address)
+} 
+  render() { 
+  
     return (
       <div className="full-bg">
         <div className="city-page-bg">
@@ -71,5 +79,13 @@ export class City extends Component {
     );
   }
 }
+const mapStateToprops=(state)=>
+{
+  
+  return {
+    address:state.location.address,
+    city_id:state.location.city_id
+  }
+}
 
-export default City;
+export default compose( withRouter,connect(mapStateToprops,{getLocationFromRoute}))(City)

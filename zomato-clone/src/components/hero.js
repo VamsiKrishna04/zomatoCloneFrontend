@@ -87,7 +87,8 @@ const mapStateToprops=(state,ownProps)=>
 {
   
   return {
-    address:state.location.address
+    address:state.location.address,
+    city_id:state.location.city_id
   }
 }
 
