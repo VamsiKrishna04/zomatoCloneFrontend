@@ -2,16 +2,20 @@
 .site-header {
   background: #cc392e;
 }
+
 .login {
   color: white;
 }
+
 .login:hover {
   color: grey;
 }
+
 .signup {
   color: white;
   border: 2px solid white;
 }
+
 .signup:hover {
   border: 2px solid grey;
   color: grey;
@@ -24,31 +28,37 @@
   background-position-y: 32%;
   padding: 16vh 0;
 }
+
 .h-search {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   padding: 10px;
   margin-top: 1%;
 }
+
 .city-container {
   width: 20%;
   margin-right: 1%;
   position: relative;
 }
+
 .select-city {
   height: 60px;
   padding-left: 2.5rem;
 }
+
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: "";
 }
+
 .location-text {
   width: 59%;
   position: relative;
 }
+
 .fa-location-arrow {
   position: absolute;
   color: black;
@@ -57,6 +67,7 @@ select {
   bottom: 22px;
   left: 1.2rem;
 }
+
 .input-separator {
   border-left: 1px solid grey;
   height: 40px;
@@ -70,9 +81,11 @@ select {
   right: 1.5rem;
   top: 0.6rem;
 }
+
 .search-button {
   width: 20%;
 }
+
 .location {
   position: absolute;
   color: black;
@@ -80,6 +93,7 @@ select {
   bottom: 22px;
   left: 1.2rem;
 }
+
 .dropdown-icon {
   position: absolute;
   color: black;
@@ -92,6 +106,7 @@ select {
 .steps-image {
   margin: 20px auto;
 }
+
 .order-steps-text {
   font-size: 1.1em;
   padding: 10px 60px;
@@ -102,20 +117,24 @@ footer.nb-footer {
   background: #222;
   border-top: 4px solid #b78c33;
 }
+
 footer.nb-footer .about {
   margin: 0 auto;
   margin-top: 40px;
   max-width: 1170px;
   text-align: center;
 }
+
 footer.nb-footer .about p {
   font-size: 13px;
   color: #999;
   margin-top: 30px;
 }
+
 footer.nb-footer .about .social-media {
   margin-top: 15px;
 }
+
 footer.nb-footer .about .social-media ul li a {
   display: inline-block;
   width: 45px;
@@ -126,14 +145,17 @@ footer.nb-footer .about .social-media ul li a {
   color: #b78c33;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 footer.nb-footer .about .social-media ul li a:hover {
   background: #b78c33;
   color: #fff;
   border-color: #b78c33;
 }
+
 footer.nb-footer .footer-info-single {
   margin-top: 30px;
 }
+
 footer.nb-footer .footer-info-single .title {
   color: #aaa;
   text-transform: uppercase;
@@ -141,25 +163,30 @@ footer.nb-footer .footer-info-single .title {
   border-left: 4px solid #b78c33;
   padding-left: 5px;
 }
+
 footer.nb-footer .footer-info-single ul li a {
   display: block;
   color: #aaa;
   padding: 2px 0;
 }
+
 footer.nb-footer .footer-info-single ul li a:hover {
   color: #b78c33;
 }
+
 footer.nb-footer .footer-info-single p {
   font-size: 13px;
   line-height: 20px;
   color: #aaa;
 }
+
 footer.nb-footer .copyright {
   margin-top: 15px;
   background: #111;
   padding: 7px 0;
   color: #999;
 }
+
 footer.nb-footer .copyright p {
   margin: 0;
   padding: 0;
@@ -169,17 +196,21 @@ footer.nb-footer .copyright p {
 .full-bg {
   background: #f3f3f3;
 }
+
 .city-page-bg {
   background-image: url("./pizza3.jpg");
   background-size: cover;
 }
+
 .overlay {
   background: rgba(0, 0, 0, 0.4);
 }
+
 .zomato-svg {
   height: 150px;
   width: 150px;
 }
+
 .fa-search {
   position: absolute;
   left: 15px;

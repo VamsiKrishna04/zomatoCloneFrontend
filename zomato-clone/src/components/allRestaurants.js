@@ -131,7 +131,7 @@ class AllRestaurants extends Component {
         return (
             <>
                 <Header />
-                <div className="container" >
+                <div className="container text-left mt-3">
                     <div className="row">
                         <FilterSidebar
                             filterByRating={this.filterByRating}

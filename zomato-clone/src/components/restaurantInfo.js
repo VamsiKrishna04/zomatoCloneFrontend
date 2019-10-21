@@ -1,6 +1,8 @@
 import React from 'react';
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 
 function RestaurantInfo({ restaurant }) {
+
     return (
         <div className="row">
             <div className="col">
@@ -13,7 +15,7 @@ function RestaurantInfo({ restaurant }) {
                             <div className="col-6">
                                 <div className="row">
                                     <div className="col">
-                                        <h2><a href="#">{restaurant.name}</a></h2>
+                                        <Link to={`/bangalore/restaurant/${restaurant.id}`}><h3>{restaurant.name}</h3></Link>
                                     </div>
                                 </div>
                                 <div className="row">
@@ -43,7 +45,7 @@ function RestaurantInfo({ restaurant }) {
                         <hr />
                         <div className="row">
                             <div className="col-3">
-                                CUISINES:
+                                <b>CUISINES:</b>
                             </div>
                             <div className="col-9">
                                 {restaurant.cuisines}
@@ -51,7 +53,7 @@ function RestaurantInfo({ restaurant }) {
                         </div>
                         <div className="row">
                             <div className="col-3">
-                                COST FOR TWO:
+                                <b>COST FOR TWO:</b>
                             </div>
                             <div className="col-9">
                                 ₹{restaurant.average_cost_for_two}
@@ -59,7 +61,7 @@ function RestaurantInfo({ restaurant }) {
                         </div>
                         <div className="row">
                             <div className="col-3">
-                                HOURS:
+                                <b>HOURS:</b>
                             </div>
                             <div className="col-9">
                                 {restaurant.timings}
@@ -68,7 +70,7 @@ function RestaurantInfo({ restaurant }) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
