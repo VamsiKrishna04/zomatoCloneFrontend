@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import zomatoSvg from "../zomato.svg";
 import LoginSignupButton from "./LoginSignupButton";
 
-export class header extends Component {
+export class Header extends Component {
   render() {
     return (
       <nav className="site-header">
@@ -15,4 +15,4 @@ export class header extends Component {
   }
 }
 
-export default header;
+export default Header;

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import Review from './review';
+import Header from './header';
+import Footer from './footer';
 
 class Restaurant extends Component {
     constructor(props) {
@@ -60,6 +62,8 @@ class Restaurant extends Component {
         let { restaurantImage, restaurantName, restaurantLocality, restaurantRating,
             votes, phoneNumbers, openingHours, cuisines, address, averageCost, latitude, longitude } = this.state;
         return (
+            <>
+            <Header />
             <div className="container">
                 <div className="card mb-3">
                     <img id="hotelPicture" className="img-fluid"
@@ -163,6 +167,8 @@ class Restaurant extends Component {
                 }
                 </div>
             </div>
+            <Footer />
+            </>
         );
     }
 }
