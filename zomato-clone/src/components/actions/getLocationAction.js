@@ -12,6 +12,11 @@ export const getLocationFromRoute=(cityname)=>dispatch=>
 {console.log(cityname)
   fetch(`https://developers.zomato.com/api/v2.1/cities?q=${cityname}&apikey=e959162dcd6f277645d33bdb151d281d`)
     .then(res=>res.json())
+    .then((res)=>{dispatch({
+      type:'GET_CITYID',
+      payload:{city_id:res.location_suggestions[0].id}
+    })
+  return res})
     .then((res)=>fetch(`https://developers.zomato.com/api/v2.1/collections?city_id=${res.location_suggestions[0].id}&apikey=e959162dcd6f277645d33bdb151d281d`)
     .then((res)=>res.json())
     .then((res)=>dispatch({

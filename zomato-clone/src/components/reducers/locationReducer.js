@@ -14,6 +14,10 @@ export default function locationReducer(state=initialState,action)
             return {
                 ...state,address:action.payload.city_name,city_id:action.payload.city_id
             }
+            case 'GET_CITYID':
+                return {
+                    ...state,city_id:action.payload.city_id
+                }
             case 'GET_COLLECTIONS':
                 return {
                     ...state,collections:action.payload.collections

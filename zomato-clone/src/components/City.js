@@ -12,7 +12,7 @@ componentDidMount() {
   this.props.getLocationFromRoute(this.props.match.params.address)
 } 
   render() { 
-  
+  console.log(this.props.city_id)
     return (
       <div className="full-bg">
         <div className="city-page-bg">
