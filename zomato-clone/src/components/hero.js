@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
-var cityName;
+
 
 export class hero extends Component {
   render() {

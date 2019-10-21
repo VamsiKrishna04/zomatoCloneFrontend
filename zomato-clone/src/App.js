@@ -2,10 +2,14 @@ import Header from "./components/header";
 import Hero from "./components/hero";
 import Option from "./components/orderStep";
 import Footer from "./components/footer";
+import Restaurant from './components/restaurant';
+import AllRestaurants from './components/allRestaurants';
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import City from "./components/City";
 import "./App.css";
 import React, { Component } from "react";
+import axios from 'axios';
+var cityName;
 
 export class App extends Component {
   constructor(props) {
@@ -35,6 +39,7 @@ export class App extends Component {
     this.setState({ address: event.target.value });
   }
   render() {
+    // console.log("cityName", this.state.address);
     return (
       <div>
         <>
@@ -50,6 +55,10 @@ export class App extends Component {
             </Route>
             <Route exact path="/:address">
               <City />
+            </Route>
+            <Route exact path="/bangalore/restaurant/:id" component={Restaurant}>
+            </Route>
+            <Route exact path="/bangalore/restaurants/:id" component={AllRestaurants}>
             </Route>
           </Router>
         </>

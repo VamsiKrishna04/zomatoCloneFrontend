@@ -44,8 +44,8 @@ export class City extends Component {
                     type="text"
                     className="form-control pl-5 h-100"
                     placeholder="Search for restaurants or cuisines..."
-                    // value={this.state.address}
-                    // onChange={this.handleChange}
+                  // value={this.state.address}
+                  // onChange={this.handleChange}
                   />
                   <i className="fa fa-search" aria-hidden="true"></i>
                 </div>
